@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Problems: A catalog of the world's problems, from mosquitoes to AI.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'none'">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <title>Problems</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #112943;
+      --muted: #4b6073;
+      --blue: #1674ae;
+      --orange: #ef934d;
+      --paper: #f7fafc;
+      --line: #dce6ed;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 50% 4%, #dcedfb 0, transparent 38rem), var(--paper);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+
+    .container { width: min(100% - 3rem, 1100px); margin-inline: auto; }
+
+    header {
+      padding-block: 1.6rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+    }
+
+    .brand::before {
+      content: "";
+      display: inline-block;
+      width: 0.7em;
+      height: 0.7em;
+      margin-right: 0.55em;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--orange));
+    }
+
+    main { padding-block: clamp(3rem, 7vw, 6rem) clamp(4rem, 8vw, 7rem); }
+
+    .hero-copy { max-width: 780px; margin-bottom: clamp(2rem, 4vw, 3rem); }
+
+    h1 {
+      margin: 0 0 0.3rem;
+      font-size: clamp(3.8rem, 9vw, 7rem);
+      line-height: 1.03;
+      letter-spacing: -0.07em;
+    }
+
+    .tagline {
+      margin: 0;
+      font-size: clamp(1.3rem, 2.7vw, 2rem);
+      line-height: 1.35;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+    }
+
+    .hero-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      box-shadow: 0 22px 55px #1737512b;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: start;
+      padding-top: clamp(3rem, 6vw, 5rem);
+    }
+
+    .explanation {
+      max-width: 660px;
+      margin: 0;
+      font-size: clamp(1.12rem, 1.8vw, 1.35rem);
+      line-height: 1.7;
+    }
+
+    .actions { display: grid; gap: 0.8rem; }
+
+    .button {
+      display: block;
+      width: 100%;
+      padding: 0.95rem 1.2rem;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      background: var(--ink);
+      color: white;
+      font: inherit;
+      font-weight: 700;
+      line-height: 1.4;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 150ms ease, transform 150ms ease;
+    }
+
+    a.button:hover { background: #245174; transform: translateY(-2px); }
+
+    .button:disabled {
+      border-color: var(--line);
+      background: #e7edf1;
+      color: #607181;
+      cursor: not-allowed;
+    }
+
+    .caption { margin: -0.25rem 0 0; color: var(--muted); font-size: 0.85rem; text-align: center; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem 1.5rem;
+      padding-block: 1.6rem;
+    }
+
+    footer p { margin: 0; }
+    footer a { text-underline-offset: 0.2em; }
+
+    @media (max-width: 700px) {
+      .container { width: min(100% - 2rem, 1100px); }
+      .hero-image { border-radius: 15px; }
+      .details { grid-template-columns: 1fr; }
+      .actions { max-width: 380px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container"><a class="brand" href="index.html">Problems</a></div>
+  </header>
+
+  <main class="container">
+    <section aria-labelledby="page-title">
+      <div class="hero-copy">
+        <h1 id="page-title">Problems</h1>
+        <p class="tagline">A catalog of the world's problems, from mosquitoes to AI.</p>
+      </div>
+      <img class="hero-image" src="assets/hero.png" width="1672" height="940" alt="Illustration of a mosquito, leaking tap, traffic, pollution, melting ice, war, and AI across one landscape">
+    </section>
+
+    <section class="details" aria-label="About Problems">
+      <p class="explanation">Anyone can submit a problem they're facing, from something small like a mosquito to something huge like climate change, war, or AI. People looking to build something can browse real problems and see who's affected. The system automatically groups similar problems together so duplicates surface as one.</p>
+      <div class="actions">
+        <a class="button" href="https://github.com/hopan/problems">View on GitHub</a>
+        <button class="button" type="button" disabled>Join the waitlist</button>
+        <p class="caption">Waitlist form coming soon.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 Hoàng. Content all rights reserved. Code licensed under <a href="LICENSE">MIT</a>.</p>
+      <a href="https://github.com/hopan/problems">GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>
