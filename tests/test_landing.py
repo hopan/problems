@@ -35,3 +35,10 @@ def test_mit_license():
     license_file = ROOT / "LICENSE"
     assert license_file.is_file()
     assert "MIT License" in license_file.read_text(encoding="utf-8")
+
+
+def test_favicon_assets():
+    html = (ROOT / "index.html").read_text(encoding="utf-8")
+    for name in ("favicon.png", "favicon-32.png", "favicon-16.png"):
+        assert f'href="assets/{name}"' in html
+        assert (ROOT / "assets" / name).is_file()
